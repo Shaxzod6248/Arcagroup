@@ -4,9 +4,12 @@ import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+
 SECRET_KEY = 'django-insecure-im+a2y@8j(cx%4yb4gwezgx8c)jsysls-+lk(vl92q8jvuc0+8'
 
+
 DEBUG = True
+
 
 ALLOWED_HOSTS = ['*']
 
@@ -46,6 +49,13 @@ MIDDLEWARE = [
 CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'arca.urls'
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 2,
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+}
 
 
 TEMPLATES = [

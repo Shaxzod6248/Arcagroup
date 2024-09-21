@@ -12,17 +12,17 @@ def validate_file_extension(value):
 
 
 class Category(models.Model):
-    name_uz = models.CharField(max_length=300)
-    name_ru = models.CharField(max_length=400)
+    name_uz = models.CharField(max_length=300, null=True)
+    name_ru = models.CharField(max_length=400, null=True)
 
     def __str__(self):
         return self.name_uz
 
 
 class Products(models.Model):
-    models.ImageField(upload_to="Arcaimg")
-    title_uz = models.CharField(max_length=200)
-    title_ru = models.CharField(max_length=300)
+    image = models.ImageField(upload_to="Arcaimg", null=True)
+    title_uz = models.CharField(max_length=200, null=True)
+    title_ru = models.CharField(max_length=300, null=True)
     descriotion_uz = models.TextField()
     description_ru = models.TextField()
     price = models.IntegerField()
