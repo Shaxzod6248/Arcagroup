@@ -37,7 +37,3 @@ class Banner(models.Model):
 
     def __str__(self):
         return 'Picbanner'
-
-
-class Offers(models.Model):
-    pass
